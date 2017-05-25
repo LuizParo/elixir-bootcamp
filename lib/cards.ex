@@ -1,4 +1,8 @@
 defmodule Cards do
+    @moduledoc """
+        Provides methods for creating and handling a deck of cards
+    """
+
     def create_deck do
         values = ["Ace", "Two", "Three", "Four", "Five"]
         suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
@@ -30,5 +34,17 @@ defmodule Cards do
             {:ok, binary} -> :erlang.binary_to_term binary
             {:error, _reason} -> "That file does not exist"
         end
+    end
+
+    def create_hand(hand_size) do
+        # Traditional way
+        #deck = Cards.create_deck
+        #deck = Cards.shuffle(deck)
+        #hand = Cards.deal(deck, hand_size)
+
+        # Chaining methods call using the Pipe Operator |> 
+        Cards.create_deck
+        |> Cards.shuffle    
+        |> Cards.deal(hand_size)
     end
 end
