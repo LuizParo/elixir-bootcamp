@@ -7,6 +7,13 @@ Example command to use the postgres docker image for this project:
 ```
 $ docker run --name postgresql -e POSTGRES_PASSWORD=root -d postgres
 ```
+
+Finding the container's ip address from the host:
+
+```
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_id
+```
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
