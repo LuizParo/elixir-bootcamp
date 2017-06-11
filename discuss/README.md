@@ -6,6 +6,7 @@ Example command to use the postgres docker image for this project:
 
 ```
 $ docker run --name postgresql -e POSTGRES_PASSWORD=root -d postgres
+$ docker run --name postgresql -e POSTGRES_PASSWORD=root -d -p 5432:5432 postgres
 ```
 
 Finding the container's ip address from the host:
