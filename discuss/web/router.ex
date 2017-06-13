@@ -21,6 +21,8 @@ defmodule Discuss.Router do
     get "/topics/:id/edit", TopicController, :edit
     post "/topics", TopicController, :create
     put "/topics/:id", TopicController, :update
+    delete "/topics/:id", TopicController, :delete
+    # resources "/topics", TopicController # can be used if we are using the restful convention and want to use all the HTTP operations
   end
 
   # Other scopes may use custom stacks.
