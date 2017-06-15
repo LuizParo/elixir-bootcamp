@@ -39,6 +39,6 @@ config :discuss, Discuss.Repo,
   username: "postgres",
   password: "root",
   database: "discuss_dev",
-  hostname: "172.17.0.2",
+  hostname: "127.0.0.1",
   port: 5432,
   pool_size: 10
